@@ -11,8 +11,8 @@ Built under the vision of **Build for Bharat / Civic Tech initiative**, this pro
 
 ## 📸 Screenshot
 
-![MGNREGA Portal Screenshot](./Screenshot 1.png)
-![MGNREGA Portal Screenshot](./Screenshot 2.png)
+![MGNREGA Portal Screenshot](.screenshots/Screenshot 1.png)
+![MGNREGA Portal Screenshot](.screenshots/Screenshot 2.png)
 
 -----
 
