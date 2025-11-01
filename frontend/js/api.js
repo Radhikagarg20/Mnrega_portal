@@ -1,11 +1,6 @@
+// frontend/js/api.js
+// Simple API helper. Set BACKEND to deployed backend URL (Render).
 const BACKEND = 'https://mnrega-portal.onrender.com/api';
-
-const BACKEND = (function(){
-  try { 
-    if (window.__BACKEND_URL__) return window.__BACKEND_URL__;
-  } catch(e){}
-  return 'http://127.0.0.1:5000/api';
-})();
 
 function qs(obj) {
   if (!obj) return '';
@@ -26,6 +21,7 @@ async function apiFetch(path, opts = {}) {
     if (!json) throw new Error('Invalid JSON from API');
     return json;
   } catch (err) {
+    // rethrow to be handled by UI
     throw err;
   }
 }
