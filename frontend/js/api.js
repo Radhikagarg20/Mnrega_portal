@@ -1,3 +1,5 @@
+const BACKEND = 'https://mnrega-portal.onrender.com/api';
+
 const BACKEND = (function(){
   try { 
     if (window.__BACKEND_URL__) return window.__BACKEND_URL__;
