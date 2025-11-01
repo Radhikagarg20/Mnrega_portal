@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MGNREGA Tracker — MAHARASHTRA</title>
+
+  <meta name="description" content="MGNREGA — district level easy-to-understand dashboard for Maharashtra. Bilingual, mobile-first, offline-capable." />
+  <meta name="theme-color" content="#059669" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="gradient-bg">
+  <div id="app" aria-live="polite"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/idb.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('js/sw.js').then(() => {
+        console.log('SW registered');
+      }).catch(console.warn);
+    }
+  </script>
+</body>
+</html>
