@@ -8,12 +8,10 @@ Built under the vision of **Build for Bharat / Civic Tech initiative**, this pro
 
 ---
 
-
 ## 📸 Screenshots
 
 ![MGNREGA Portal Screenshot 1](./screenshots/Screenshot%201.png)
 ![MGNREGA Portal Screenshot 2](./screenshots/Screenshot%202.png)
-
 
 ----
 
@@ -56,7 +54,6 @@ Built under the vision of **Build for Bharat / Civic Tech initiative**, this pro
 
 ## 📁 Project Structure
 
-
 mgnrega-portal
 ├── backend/
 │ ├── server.js
@@ -85,9 +82,6 @@ mgnrega-portal
 │ ├── ecosystem.config.js
 │ └── nginx.conf
 └── README.md
-
-
-
 
 
 ---
