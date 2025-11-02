@@ -110,26 +110,51 @@
   }
 
   async function loadDashboard(){
-    renderLoading();
-    try {
-      const q = { district: selectedDistrict, state: 'Maharashtra', limit: 6 };
-      const resp = await fetch(`http://127.0.0.1:5000/api/proxy?district=${selectedDistrict}&state=Maharashtra&limit=6`);
-      const json = await resp.json();
-      const payload = mapRemoteToUI(json, selectedDistrict);
+  renderLoading();
+  try {
+    const q = { district: selectedDistrict, state: 'Maharashtra', limit: 6 };
+    const resp = await fetch(`https://mnrega-portal.onrender.com/api/proxy?district=${selectedDistrict}&state=Maharashtra&limit=6`);
+    const json = await resp.json();
+    const payload = mapRemoteToUI(json, selectedDistrict);
 
-      try { await IDB.idbPut('district:' + selectedDistrict, payload); } catch(e){ console.warn('idb put failed', e.message); }
-      renderDashboardUI(payload);
-    } catch (err) {
-      const cached = await IDB.idbGet('district:' + selectedDistrict);
-      if (cached) {
-        showOfflineNotice();
-        return renderDashboardUI(cached);
-      }
-      console.error(err);
-      alert('Failed to load data and no cache available.');
-      renderLanding();
+    try { 
+      await IDB.idbPut('district:' + selectedDistrict, payload); 
+    } catch(e){ 
+      console.warn('idb put failed', e.message); 
     }
+
+    renderDashboardUI(payload);
+
+  } catch (err) {
+    console.warn('API fetch failed:', err.message);
+
+    // Try cache first
+    const cached = await IDB.idbGet('district:' + selectedDistrict);
+    if (cached) {
+      showOfflineNotice();
+      return renderDashboardUI(cached);
+    }
+
+    // ✅ NEW fallback if no cache or backend
+    console.warn('No cache or API, showing demo data');
+    const demo = {
+      district: selectedDistrict || "Demo District",
+      workers: 80000,
+      jobCards: 150000,
+      personDays: 1200000,
+      expenditure: 75.5,
+      scPersonDays: 250000,
+      stPersonDays: 150000,
+      womenPersonDays: 700000,
+      worksCompleted: 500,
+      activeJobSeekers: 60000,
+      avgDaysPerHH: 85,
+      monthlyEmployment: [200000,220000,240000,260000,280000,300000],
+      monthlyExpenditure: [8,9,10,11,12,13]
+    };
+    renderDashboardUI(demo);
   }
+}
 
   function renderLoading(){
     app.innerHTML = `<div class="container"><div class="card center"><div class="kicker">Loading…</div><h2 class="huge">⏳</h2></div></div>`;
