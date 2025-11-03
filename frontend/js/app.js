@@ -1,6 +1,6 @@
 (function(){
   const DISTRICTS = [
-  "Amravati","Dhule","Jalna","Kolhapur","Latur","Nashik","Parbhani","Pune","Raigad","Sangli","Washim"
+  "Amravati","Dhule","Jalna","Kolhapur","Latur","Parbhani","Pune","Raigad","Sangli","Washim"
 ];
 
   let selectedDistrict = localStorage.getItem('district') || null;
@@ -128,14 +128,12 @@
   } catch (err) {
     console.warn('API fetch failed:', err.message);
 
-    // Try cache first
     const cached = await IDB.idbGet('district:' + selectedDistrict);
     if (cached) {
       showOfflineNotice();
       return renderDashboardUI(cached);
     }
 
-    // ✅ NEW fallback if no cache or backend
     console.warn('No cache or API, showing demo data');
     const demo = {
       district: selectedDistrict || "Demo District",
@@ -260,14 +258,12 @@
       </div>
     `;
 
-    // events
     document.getElementById('changeBtn').addEventListener('click', ()=>{
       selectedDistrict = null;
       localStorage.removeItem('district');
       renderLanding();
     });
     document.getElementById('langSel2').addEventListener('change', e => { setLang(e.target.value); loadDashboard(); });
-
     renderCharts(data);
   }
 
