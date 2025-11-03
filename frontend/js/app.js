@@ -288,5 +288,6 @@
     });
   }
 
-  if (selectedDistrict) loadDashboard(); else renderLanding();
+  renderLanding();
 })();
+
