@@ -1,6 +1,6 @@
 # 🏗️ MGNREGA Portal — Maharashtra
 
-### 🌍 About the Project
+### About the Project
 The **MGNREGA Maharashtra Portal** is a **bilingual (English + Hindi)**, **mobile-friendly**, and **offline-capable** web dashboard designed to visualize district-level performance data from the **Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)**.  
 It helps users especially citizens and officials — easily view **person-days generated, total expenditure, active job cards, and employment patterns** in their region.
 
