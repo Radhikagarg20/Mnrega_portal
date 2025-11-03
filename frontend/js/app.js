@@ -276,16 +276,53 @@
     if (window.expChart) window.expChart.destroy();
 
     window.empChart = new Chart(empCtx, {
-      type: 'line',
-      data: { labels: months, datasets: [{ label: t('personDays'), data: data.monthlyEmployment, fill:true, tension:0.4 }] },
-      options:{ plugins:{legend:{display:false}}, responsive:true }
-    });
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [{
+      label: t('personDays'),
+      data: data.monthlyEmployment,
+      fill: true,
+      tension: 0.4,
+      borderColor: 'rgba(75, 192, 192, 1)', // teal line
+      backgroundColor: 'rgba(75, 192, 192, 0.2)', // light fill
+      pointBackgroundColor: '#059669',
+      pointRadius: 5
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    responsive: true,
+    scales: {
+      y: { grid: { color: 'rgba(0,0,0,0.05)' } },
+      x: { grid: { color: 'rgba(0,0,0,0.05)' } }
+    }
+  }
+});
 
-    window.expChart = new Chart(expCtx, {
-      type: 'bar',
-      data: { labels: months, datasets: [{ label: t('totalExpenditure'), data: data.monthlyExpenditure }] },
-      options:{ plugins:{legend:{display:false}}, responsive:true }
-    });
+window.expChart = new Chart(expCtx, {
+  type: 'bar',
+  data: {
+    labels: months,
+    datasets: [{
+      label: t('totalExpenditure'),
+      data: data.monthlyExpenditure,
+      backgroundColor: [
+        '#60a5fa', '#34d399', '#fbbf24', '#f87171', '#a78bfa', '#f472b6'
+      ],
+      borderRadius: 8
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    responsive: true,
+    scales: {
+      y: { grid: { color: 'rgba(0,0,0,0.05)' } },
+      x: { grid: { color: 'rgba(0,0,0,0.05)' } }
+    }
+  }
+});
+
   }
 
   renderLanding();
