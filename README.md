@@ -28,16 +28,13 @@ Built under the vision of **Build for Bharat / Civic Tech initiative**, this pro
 ### 🧠 Backend
 - **Node.js + Express**
 - **Axios** for API requests
-- **MongoDB (optional)** via **Mongoose**
 - **Environment Configuration** using `.env`
 - **Caching Layer** to reduce redundant API calls
 
 ### 🚀 Deployment
 - **PM2** for process management
 - **Nginx** for reverse proxy
-- **Linux (Ubuntu)** compatible deploy script `deploy.sh`
-- **GitHub** for version control
-
+  
 ---
 
 ## 💡 Key Features
@@ -55,33 +52,38 @@ Built under the vision of **Build for Bharat / Civic Tech initiative**, this pro
 
 ## 📁 Project Structure
 
-mgnrega-portal
+mgnrega-portal/
 ├── backend/
-│ ├── server.js
-│ ├── package.json
-│ ├── package-lock.json
-│ ├── routes/
-│ │ └── api.js
-│ ├── services/
-│ │ └── dataService.js
-│ ├── models/
-│ │ └── CacheEntry.js
-│ ├── .env.example
-│ └── .gitignore
+│   ├── server.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── routes/
+│   │   └── api.js
+│   ├── services/
+│   │   └── dataService.js
+│   └── models/
+│       └── CacheEntry.js
+│
 ├── frontend/
-│ ├── index.html
-│ ├── css/
-│ │ └── styles.css
-│ ├── js/
-│ │ ├── app.js
-│ │ ├── api.js
-│ │ ├── i18n.js
-│ │ ├── idb.js
-│ │ └── sw.js
+│   ├── index.html
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── api.js
+│   │   ├── i18n.js
+│   │   ├── idb.js
+│   │   ├── sw.js
+│   │   ├── register-sw.js
+│   │   └── chart.min.js
+│
 ├── deployment/
-│ ├── deploy.sh
-│ ├── ecosystem.config.js
-│ └── nginx.conf
+│   ├── deploy.sh
+│   ├── ecosystem.config.js
+│   └── nginx.conf
+│
 └── README.md
 
 
@@ -89,12 +91,11 @@ mgnrega-portal
 
 ## ⚡ Setup & Run Instructions
 
-### 📦 Prerequisites
+### Prerequisites
 Make sure you have installed:
 - Node.js (v18+)
 - npm
 - Git
-- Optional: http-server for frontend preview
 
 ---
 
@@ -119,7 +120,7 @@ Server runs at: http://127.0.0.1:8080
 ------
 
 
-🏆 Achievements & Highlights
+## Achievements & Highlights
 
 🏅 Improved data accessibility for rural citizens of Maharashtra
 📊 Enabled interactive visualization of MGNREGA data
@@ -128,8 +129,7 @@ Server runs at: http://127.0.0.1:8080
 🧠 Simplified government data APIs into easy-to-understand charts
 🧩 Clean modular architecture (frontend-backend separated)
 
-
-🔮 Future Enhancements
+## Future Enhancements
 
 Add Marathi as a third language
 Integrate AI-based anomaly detection (e.g., low wage anomalies)
@@ -137,4 +137,3 @@ Add admin dashboard for monitoring and custom reports
 Add data export (CSV, PDF) options
 Cloud-hosted version with HTTPS (AWS / Render / Vercel backend)
 Progressive Web App (PWA) installation for offline use
-
