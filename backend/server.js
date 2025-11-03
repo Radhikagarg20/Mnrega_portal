@@ -1,4 +1,3 @@
-// server.js (DB-optional safe version)
 require('dotenv').config();
 const express = require('express');
 const helmet = require('helmet');
@@ -23,8 +22,8 @@ app.use(cors({ origin: true }));
 app.use(express.json({ limit: '100kb' }));
 
 const limiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
-  max: 120, // per IP
+  windowMs: 60 * 1000, 
+  max: 120, 
   message: { error: 'Too many requests, slow down' }
 });
 app.use('/api/', limiter);
