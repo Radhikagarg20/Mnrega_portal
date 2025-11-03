@@ -1,4 +1,3 @@
-// PM2 Ecosystem Configuration for MGNREGA Maharashtra Tracker
 module.exports = {
   apps: [{
     name: 'mgnrega-maharashtra-api',
