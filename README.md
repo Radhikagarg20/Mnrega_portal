@@ -6,6 +6,9 @@ It helps users especially citizens and officials — easily view **person-days g
 
 Built under the vision of **Build for Bharat / Civic Tech initiative**, this project simplifies access to open government data and empowers citizens with transparency and usability.
 
+
+LIVE PROJECT: https://mnrega-portal.onrender.com/ 
+
 ---
 
 ## 📸 Screenshots
@@ -18,20 +21,20 @@ Built under the vision of **Build for Bharat / Civic Tech initiative**, this pro
 
 ## ⚙️ Tech Stack
 
-### 🎨 Frontend
+### Frontend
 - **HTML5, CSS3, JavaScript (Vanilla JS)**
 - **Chart.js** for visual analytics
 - **Service Worker (sw.js)** for offline caching
 - **IndexedDB (idb.js)** for local storage
 - **Responsive Design** for mobile and desktop devices
 
-### 🧠 Backend
+### Backend
 - **Node.js + Express**
 - **Axios** for API requests
 - **Environment Configuration** using `.env`
 - **Caching Layer** to reduce redundant API calls
 
-### 🚀 Deployment
+### Deployment
 - **PM2** for process management
 - **Nginx** for reverse proxy
   
@@ -87,6 +90,26 @@ mgnrega-portal/
 └── README.md
 
 
+###  Achievements & Highlights
+
+- Improved data accessibility for rural citizens of Maharashtra
+- Enabled interactive visualization of MGNREGA data
+- Designed for mobile-first users in remote areas
+- Implemented offline access for regions with limited connectivity
+- Simplified government data APIs into easy-to-understand charts
+- Clean modular architecture (frontend-backend separated)
+
+
+## Future Enhancements
+
+- Add Marathi as a third language
+- Integrate AI-based anomaly detection (e.g., low wage anomalies)
+- Add admin dashboard for monitoring and custom reports
+- Add data export (CSV, PDF) options
+- Cloud-hosted version with HTTPS (AWS / Render / Vercel backend)
+- Progressive Web App (PWA) installation for offline use
+
+
 ---
 
 ## ⚡ Setup & Run Instructions
@@ -110,30 +133,9 @@ node server.js
 Server runs at: http://127.0.0.1:5000 
 
 
-### 🔹 Frontend Setup
+#### 🔹 Frontend Setup
 ```cmd
 cd "C:\Users\MCL\3D Objects\mgnrega_portal\frontend"
 npx http-server -c-1 -p 8080 .
 
 Server runs at: http://127.0.0.1:8080
-
-------
-
-
-## Achievements & Highlights
-
-🏅 Improved data accessibility for rural citizens of Maharashtra
-📊 Enabled interactive visualization of MGNREGA data
-📱 Designed for mobile-first users in remote areas
-⚡ Implemented offline access for regions with limited connectivity
-🧠 Simplified government data APIs into easy-to-understand charts
-🧩 Clean modular architecture (frontend-backend separated)
-
-## Future Enhancements
-
-Add Marathi as a third language
-Integrate AI-based anomaly detection (e.g., low wage anomalies)
-Add admin dashboard for monitoring and custom reports
-Add data export (CSV, PDF) options
-Cloud-hosted version with HTTPS (AWS / Render / Vercel backend)
-Progressive Web App (PWA) installation for offline use
